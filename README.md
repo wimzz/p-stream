@@ -40,7 +40,7 @@ pnpm run dev
 Then you can visit the local instance [here](http://localhost:5173) or, at local host on port 5173.
 
 ## Updating a P-Stream Instance
-
+ 
 To update a P-Stream instance you can type the below commands into a terminal at the root of your project.
 
 ```bash
