@@ -19,15 +19,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-      - name: Install dependencies (lock file)
-        run: npm install --package-lock-only
-      - name: Install actual dependencies
+      - name: Install dependencies
         run: npm install
       - name: Build
-        run: |
-          VITE_TMDB_READ_API_KEY=${{ secrets.VITE_TMDB_READ_API_KEY }} \
-          npm run build
+        run: npm run build
+        env:
+          VITE_TMDB_READ_API_KEY: ${{ secrets.VITE_TMDB_READ_API_KEY }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
